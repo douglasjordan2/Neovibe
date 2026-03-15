@@ -1,4 +1,4 @@
-# ClaVim
+# Neovibe
 
 AI-native Neovim distro. Cursor features, terminal speed.
 
@@ -11,7 +11,7 @@ AI-native Neovim distro. Cursor features, terminal speed.
      ╚═════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ```
 
-ClaVim is an opinionated Neovim distribution built around [claudecode.nvim](https://github.com/douglasjordan2/claudecode.nvim) — bringing Cursor-like AI editing to Neovim with no API key required. Just your Claude Pro/Max subscription.
+Neovibe is an opinionated Neovim distribution built around [claudecode.nvim](https://github.com/douglasjordan2/claudecode.nvim) — bringing Cursor-like AI editing to Neovim with no API key required. Just your Claude Pro/Max subscription.
 
 ## Install
 
@@ -25,23 +25,23 @@ ClaVim is an opinionated Neovim distribution built around [claudecode.nvim](http
 ### Quick start
 
 ```bash
-git clone https://github.com/douglasjordan2/clavim ~/.config/clavim
-NVIM_APPNAME=clavim nvim
+git clone https://github.com/douglasjordan2/neovibe ~/.config/neovibe
+NVIM_APPNAME=neovibe nvim
 ```
 
 Plugins install automatically on first launch.
 
-> **Note:** `NVIM_APPNAME=clavim` runs ClaVim alongside your existing Neovim config without conflicts. Add `alias clavim='NVIM_APPNAME=clavim nvim'` to your shell rc for convenience.
+> **Note:** `NVIM_APPNAME=neovibe` runs Neovibe alongside your existing Neovim config without conflicts. Add `alias neovibe='NVIM_APPNAME=neovibe nvim'` to your shell rc for convenience.
 
 ### Health check
 
 ```
-:checkhealth clavim
+:checkhealth neovibe
 ```
 
 ## Cursor Parity
 
-| Cursor Feature | ClaVim | Keymap |
+| Cursor Feature | Neovibe | Keymap |
 |---|---|---|
 | Chat sidebar | Split panel with streaming | `<leader>ac` |
 | Cmd+K inline edit | Visual select + instruct | `<leader>ae` (visual) |
@@ -151,7 +151,7 @@ Press `<leader>?` to open the cheatsheet, or `<leader>` and wait for which-key.
 | [oil.nvim](https://github.com/stevearc/oil.nvim) | `editor.oil` | File browser (`-`) |
 | [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) | `lang.typescript` | TypeScript (auto-imports, inlay hints) |
 
-All extras are **enabled by default**. To disable one, remove its line from `lua/clavim/config/extras.lua`:
+All extras are **enabled by default**. To disable one, remove its line from `lua/neovibe/config/extras.lua`:
 
 ```lua
 return {
@@ -165,11 +165,11 @@ return {
 ## Structure
 
 ```
-clavim/
+neovibe/
   init.lua                        # Bootstrap + lazy.nvim setup
-  lua/clavim/
-    cheatsheet.lua                # :ClavimCheatsheet / <leader>?
-    health.lua                    # :checkhealth clavim
+  lua/neovibe/
+    cheatsheet.lua                # :NeovibeCheatsheet / <leader>?
+    health.lua                    # :checkhealth neovibe
     config/
       options.lua                 # Editor defaults
       keymaps.lua                 # Global keybindings

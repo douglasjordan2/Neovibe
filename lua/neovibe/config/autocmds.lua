@@ -22,6 +22,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
-vim.api.nvim_create_user_command("ClavimCheatsheet", function()
-  require("clavim.cheatsheet").open()
+vim.api.nvim_create_user_command("NeovibeCheatsheet", function()
+  require("neovibe.cheatsheet").open()
 end, {})

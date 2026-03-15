@@ -140,18 +140,18 @@ function M.open()
     table.insert(hls, { line, col, col + len, group })
   end
 
-  local title = "Clavim Cheatsheet"
+  local title = "Neovibe Cheatsheet"
   local title_pad = math.floor((width - #title) / 2)
   table.insert(lines, "")
   table.insert(lines, string.rep(" ", title_pad) .. title)
-  add_hl(#lines - 1, title_pad, #title, "ClavimCheatsheetHeader")
+  add_hl(#lines - 1, title_pad, #title, "NeovibeCheatsheetHeader")
   table.insert(lines, "")
 
   for _, group in ipairs(groups) do
     local sep_len = math.max(0, width - #group.name - 2)
     local header = " " .. group.name .. " " .. string.rep("─", sep_len)
     table.insert(lines, header)
-    add_hl(#lines - 1, 0, #header, "ClavimCheatsheetGroup")
+    add_hl(#lines - 1, 0, #header, "NeovibeCheatsheetGroup")
 
     local mappings = group.mappings
     for i = 1, #mappings, 2 do
@@ -167,14 +167,14 @@ function M.open()
       table.insert(lines, line)
       local ln = #lines - 1
 
-      add_hl(ln, 1, #m1[1], "ClavimCheatsheetKey")
-      add_hl(ln, 1 + key_w, #m1[2], "ClavimCheatsheetDesc")
+      add_hl(ln, 1, #m1[1], "NeovibeCheatsheetKey")
+      add_hl(ln, 1 + key_w, #m1[2], "NeovibeCheatsheetDesc")
 
       if mappings[i + 1] then
         local m2 = mappings[i + 1]
         local right_start = #left + 1
-        add_hl(ln, right_start, #m2[1], "ClavimCheatsheetKey")
-        add_hl(ln, right_start + key_w, #m2[2], "ClavimCheatsheetDesc")
+        add_hl(ln, right_start, #m2[1], "NeovibeCheatsheetKey")
+        add_hl(ln, right_start + key_w, #m2[2], "NeovibeCheatsheetDesc")
       end
     end
 
@@ -183,7 +183,7 @@ function M.open()
 
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
 
-  local ns = vim.api.nvim_create_namespace("clavim_cheatsheet")
+  local ns = vim.api.nvim_create_namespace("neovibe_cheatsheet")
   for _, hl in ipairs(hls) do
     vim.api.nvim_buf_add_highlight(buf, ns, hl[4], hl[1], hl[2], hl[3])
   end
@@ -201,14 +201,14 @@ function M.open()
     row = math.floor((vim.o.lines - height) / 2),
     style = "minimal",
     border = "rounded",
-    title = " Clavim ",
+    title = " Neovibe ",
     title_pos = "center",
   })
 
-  vim.api.nvim_set_hl(0, "ClavimCheatsheetHeader", { bold = true, fg = "#81A1C1" })
-  vim.api.nvim_set_hl(0, "ClavimCheatsheetGroup", { bold = true, fg = "#88C0D0" })
-  vim.api.nvim_set_hl(0, "ClavimCheatsheetKey", { bold = true, fg = "#EBCB8B" })
-  vim.api.nvim_set_hl(0, "ClavimCheatsheetDesc", { fg = "#D8DEE9" })
+  vim.api.nvim_set_hl(0, "NeovibeCheatsheetHeader", { bold = true, fg = "#81A1C1" })
+  vim.api.nvim_set_hl(0, "NeovibeCheatsheetGroup", { bold = true, fg = "#88C0D0" })
+  vim.api.nvim_set_hl(0, "NeovibeCheatsheetKey", { bold = true, fg = "#EBCB8B" })
+  vim.api.nvim_set_hl(0, "NeovibeCheatsheetDesc", { fg = "#D8DEE9" })
 
   local close = function()
     if vim.api.nvim_win_is_valid(win) then

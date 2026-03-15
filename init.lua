@@ -12,14 +12,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("clavim.config.options")
-require("clavim.config.keymaps")
-require("clavim.config.autocmds")
+require("neovibe.config.options")
+require("neovibe.config.keymaps")
+require("neovibe.config.autocmds")
 
 local spec = {
-  { import = "clavim.plugins" },
+  { import = "neovibe.plugins" },
 }
-vim.list_extend(spec, require("clavim.extras"))
+vim.list_extend(spec, require("neovibe.extras"))
 
 require("lazy").setup({
   spec = spec,

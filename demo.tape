@@ -41,8 +41,8 @@ Enter
 Sleep 500ms
 Show
 
-# 1. Launch ClaVim — dashboard appears
-Type "NVIM_APPNAME=clavim nvim --cmd 'set shortmess+=F'"
+# 1. Launch Neovibe — dashboard appears
+Type "NVIM_APPNAME=neovibe nvim --cmd 'set shortmess+=F'"
 Enter
 Sleep 3s
 Screenshot demo-dashboard.png
