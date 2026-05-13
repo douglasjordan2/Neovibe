@@ -7,7 +7,9 @@
         \/        \/         \/                     \/        \/
 ```
 
-Neovibe is an opinionated Neovim distribution built around [claudecode.nvim](https://github.com/douglasjordan2/claudecode.nvim) — bringing Cursor-like AI editing to Neovim with no API key required. Just your Claude Pro/Max subscription.
+Neovibe is an opinionated Neovim distribution built around [claudecode.nvim](https://github.com/douglasjordan2/claudecode.nvim) — bringing Cursor-like AI editing to Neovim via the official Claude Code CLI.
+
+> Heads up: the AI features drive the `claude` CLI in headless mode (`claude -p`), which Anthropic bills separately from interactive Claude Code Pro/Max sessions. See [Anthropic's pricing](https://docs.anthropic.com/en/docs/claude-code/costs) before heavy use.
 
 ## Install
 
@@ -193,7 +195,7 @@ neovibe/
 
 1. **AI is first-class** — chat, inline edit, and diff review are core to the workflow, not afterthoughts
 2. **Opinionated but escapable** — sane defaults, everything overridable
-3. **No API key needed** — runs on your Claude Pro/Max subscription via the CLI
+3. **Official CLI, ToS-compliant** — drives the `claude` binary directly; no scraping, no reverse-engineering
 4. **Lean** — 15 plugins, nothing wasted
 
 ## License
